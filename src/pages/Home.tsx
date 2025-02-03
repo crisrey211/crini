@@ -2,6 +2,7 @@ import FAQS from "@/components/FAQS";
 import Hero from "@/components/sections/Hero";
 import Banner from "@/components/sections/Banner";
 import Socialnetwork from "@/components/sections/Socialnetwork";
+import Testimonials from "@/components/sections/Testimonials";
 export default function Home() {
   return (
     <div className="w-full min-h-screen">
@@ -9,6 +10,7 @@ export default function Home() {
                           preferencias. Permítenos ayudarte a planear las vacaciones de tus
                           sueños."/>
       <Banner />
+      <Testimonials />
       <FAQS />
       <Socialnetwork />
     </div>)
