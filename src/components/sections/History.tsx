@@ -33,7 +33,7 @@ export default function History() {
                 </div>
 
                 <div
-                    className="bg-teal-900 text-white flex flex-col justify-between py-10 md:py-16 px-10 md:px-16 w-full max-w-[635px]"
+                    className="bg-brand-900 text-white flex flex-col justify-between py-10 md:py-16 px-10 md:px-16 w-full max-w-[635px]"
                 >
                     <div
                         className="w-full max-w-[320px] aspect-square overflow-hidden rounded-lg mb-6"
@@ -57,7 +57,7 @@ export default function History() {
                             cercano y lleno de empatía.
                         </p>
                         <button
-                            className="bg-white bg-brand-900 px-6 py-3 rounded-full font-semibold shadow hover:bg-teal-100 transition"
+                            className="bg-white text-textColor-foreground px-6 py-3 rounded-full font-semibold shadow hover:bg-teal-100 transition"
                         >
                             Contáctanos
                         </button>
