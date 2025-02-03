@@ -1,7 +1,7 @@
 import Facebook from "@/assets/icons/facebook.svg";
+import Whatsapp from "@/assets/icons/whatsapp.svg";
 import Telegram from "@/assets/icons/telegram.svg";
 import V1_logo_white from "@/assets/icons/v1-white.svg";
-import Whatsapp from "@/assets/icons/whatsapp.svg";
 
 export default function Footer() {
     return (

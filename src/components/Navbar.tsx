@@ -1,9 +1,10 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
+import Telegram from "@/assets/icons/telegram.svg";
+import Facebook from "@/assets/icons/facebook.svg";
+import Whatsapp from "@/assets/icons/whatsapp.svg";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet"
-import { Menu, Zap, TreePalmIcon as PalmTree, ChevronDown, Facebook, Twitter, Instagram, X } from "lucide-react"
+import { Menu, Zap, TreePalmIcon as PalmTree, ChevronDown, X } from "lucide-react"
 import { menuItems } from '../data/menuItems';
 import { Link } from "react-router-dom"
 import {
@@ -56,7 +57,7 @@ export default function Navbar() {
                                                 {/* {item.icon} */}
                                             </NavigationMenuTrigger>
                                         ) : (
-                                            <Link to="/contact"
+                                            <Link to="/contacto"
                                             >
                                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                                     <span>{item.title}</span>
@@ -80,7 +81,7 @@ export default function Navbar() {
                                                     </div>
                                                     <div className="w-2/3 grid grid-cols-2 gap-6">
                                                         {item.submenu.items.map((subItem) => (
-                                                            <Link key={subItem.title} to="/contact"
+                                                            <Link key={subItem.title} to="/contacto"
                                                                 className="group block">
                                                                 <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-blue-600">
                                                                     {subItem.title}
@@ -131,7 +132,7 @@ export default function Navbar() {
                                                                     <li key={subItem.title}>
                                                                         <NavigationMenuLink asChild>
                                                                             <Link
-                                                                                to="/contact"
+                                                                                to="/contacto"
                                                                                 className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                                                                             >
                                                                                 <div className="text-sm font-medium leading-none">{subItem.title}</div>
@@ -146,7 +147,7 @@ export default function Navbar() {
                                             </NavigationMenu>
                                         ) : (
                                             <Link
-                                                to="/contact"
+                                                to="/contacto"
 
                                                 className="flex items-center justify-between py-2 text-gray-600 hover:text-gray-900"
                                                 onClick={() => setIsOpen(false)}
@@ -163,17 +164,17 @@ export default function Navbar() {
                                 <hr className="my-4" />
                                 <div className="text-sm text-gray-600">Redes sociales</div>
                                 <div className="flex space-x-6">
-                                    <Link to="/contact"
+                                    <Link to="/contacto"
                                         className="text-gray-600 hover:text-gray-900">
-                                        <Facebook className="h-6 w-6" />
+                                        <Facebook />
                                     </Link>
-                                    <Link to="/contact"
+                                    <Link to="/contacto"
                                         className="text-gray-600 hover:text-gray-900">
-                                        <Twitter className="h-6 w-6" />
+                                        <Telegram />
                                     </Link>
-                                    <Link to="/contact"
+                                    <Link to="/contacto"
                                         className="text-gray-600 hover:text-gray-900">
-                                        <Instagram className="h-6 w-6" />
+                                        <Whatsapp />
                                     </Link>
                                 </div>
                                 <Button className="w-full rounded-full mt-8">Solicitar cotización</Button>
