@@ -1,30 +1,43 @@
-"use client"
-
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { useEffect, useState } from "react";
-
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { useState, useEffect } from "react"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { motion, AnimatePresence } from "framer-motion"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { offerquestions } from "@/data/offerquestions";
 import { offers } from "@/data/offers";
-import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const tipos = [
-    "Paquetes vacacionales",
-    "Cajas smartbox",
-    "Vuelos",
-    "Vuelos + Hotel",
-    "Alquiler de coches",
-    "Playas",
-    "Montaña",
-    "Ciudades",
+// Datos de ejemplo ampliados para el carrusel
+
+
+
+const filters = {
+    Todos: 0,
+    "Paquetes vacacionales": 1,
+    "Cajas smartbox": 2,
+    Vuelos: 3,
+    "Vuelos + Hotel": 4,
+    "Alquiler de coches": 5,
+    Playas: 6,
+    Montaña: 7,
+    Ciudades: 8,
+}
+
+const filterButtons = [
+    { icon: "🎁", text: "Paquetes vacacionales" },
+    { icon: "📦", text: "Cajas de smartbox" },
+    { icon: "✈️", text: "Vuelos" },
+    { icon: "🏨", text: "Vuelos + Hotel" },
+    { icon: "🚗", text: "Alquiler de coches" },
+    { icon: "🏖️", text: "Playas" },
+    { icon: "🏔️", text: "Montaña" },
+    { icon: "🏙️", text: "Ciudades" },
 ]
 
 const offersWithTypes = offers.map((offer) => ({
     ...offer,
-    type: tipos[Math.floor(Math.random() * tipos.length)],
+    type: offer.type,
 }))
 
 export default function LatestOffers() {
@@ -34,22 +47,26 @@ export default function LatestOffers() {
     const [showAllFilters, setShowAllFilters] = useState(false)
     const [showAllOffers, setShowAllOffers] = useState(false)
     const [randomQuestions, setRandomQuestions] = useState<typeof offerquestions>([])
+    const [activeFilter, setActiveFilter] = useState<number>(0)
+
     const isMobile = typeof window !== "undefined" && window.innerWidth < 768
     const itemsPerPage = isMobile ? 1 : 3
+    const filteredOffers =
+        activeFilter === 0 ? offersWithTypes : offersWithTypes.filter((offer) => offer.type === activeFilter)
     const startIndex = (currentPage - 1) * itemsPerPage
-    const visibleOffers = showAllOffers ? offersWithTypes : offersWithTypes.slice(startIndex, startIndex + itemsPerPage)
-    const totalPages = isMobile ? offersWithTypes.length : Math.ceil(offersWithTypes.length / itemsPerPage)
+    const visibleOffers = showAllOffers ? filteredOffers : filteredOffers.slice(startIndex, startIndex + itemsPerPage)
+    const totalPages = Math.ceil(filteredOffers.length / itemsPerPage)
 
     useEffect(() => {
         setCurrentPage(1)
-    }, [isMobile])
+    }, [activeFilter])
 
     useEffect(() => {
         if (selectedOffer) {
-            const shuffled = [...offerquestions].sort(() => Math.random() - 0.5) //Fixed the sorting algorithm
+            const shuffled = [...offerquestions].sort(() => Math.random() - 0.5)
             setRandomQuestions(shuffled.slice(0, 3 + Math.floor(Math.random() * 2)))
         }
-    }, [selectedOffer, offerquestions]) //Added offerquestions to dependencies
+    }, [selectedOffer, offerquestions]) // Added offerquestions to dependencies
 
     const nextPage = () => {
         if (currentPage < totalPages) {
@@ -63,18 +80,7 @@ export default function LatestOffers() {
         }
     }
 
-    const filterButtons = [
-        { icon: "🎁", text: "Paquetes vacacionales" },
-        { icon: "📦", text: "Cajas de smartbox" },
-        { icon: "✈️", text: "Vuelos" },
-        { icon: "🏨", text: "Vuelos + Hotel" },
-        { icon: "🚗", text: "Alquiler de coches" },
-        { icon: "🏖️", text: "Playas" },
-        { icon: "🏔️", text: "Montaña" },
-        { icon: "🏙️", text: "Ciudades" },
-    ]
-
-    const visibleFilters = showAllFilters ? filterButtons : filterButtons.slice(0, 4)
+    const visibleFilters = showAllFilters ? Object.entries(filters) : Object.entries(filters).slice(0, 4)
 
     return (
         <section className="py-16 px-4">
@@ -94,12 +100,17 @@ export default function LatestOffers() {
                         className={`flex gap-4 ${isMobile ? "" : "flex-wrap justify-center"}`}
                         style={{ minWidth: isMobile ? "max-content" : "auto" }}
                     >
-                        {/* <Badge active={true} label="texto" onClick={() => { }} icon={<Facebook />} />
-                        <Badge active={false} label="texto" onClick={() => { }} icon={<Facebook />} /> */}
-                        {visibleFilters.map((filter, index) => (
-                            <Button key={index} variant={index === 0 ? "default" : "outline"}>
-                                <span className="mr-2">{filter.icon}</span>
-                                {filter.text}
+                        {visibleFilters.map(([key, value], index) => (
+                            <Button
+                                key={key}
+                                variant={activeFilter === value ? "default" : "outline"}
+                                onClick={() => {
+                                    setActiveFilter(filters[key as keyof typeof filters])
+                                    setCurrentPage(1)
+                                }}
+                            >
+                                <span className="mr-2">{filterButtons[index]?.icon || "🏷️"}</span>
+                                {value === 0 ? "Todos" : value}
                             </Button>
                         ))}
                         {!showAllFilters && !isMobile && (
@@ -158,7 +169,9 @@ export default function LatestOffers() {
                                                 </div>
                                             )}
                                         </div>
-
+                                        <div className="my-4 text-center">
+                                            <hr className="w-1/2 mx-auto border-t border-gray-300" />
+                                        </div>
                                         <div className="mt-4">
                                             <div className="text-sm text-gray-500">Desde</div>
                                             <div className="flex items-baseline gap-2">
@@ -193,7 +206,7 @@ export default function LatestOffers() {
                     )}
 
                     {/* Botón "Ver más ofertas" para escritorio */}
-                    {!isMobile && !showAllOffers && (
+                    {!isMobile && !showAllOffers && filteredOffers.length > itemsPerPage && (
                         <div className="flex justify-center mt-8">
                             <Button variant="outline" onClick={() => setShowAllOffers(true)}>
                                 <span className="mr-2">➕</span>

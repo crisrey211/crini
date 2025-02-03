@@ -6,6 +6,7 @@ interface Offer {
     discount: string;
     duration?: string,
     dates?: string,
+    type: number,
     details: string[];
     price: {
         original: string;
@@ -18,6 +19,7 @@ interface Offer {
 }
 
 export const offers: Offer[] = [
+
     {
         id: 1,
         title: "Cumpleaños para mimarse con un tratamiento de belleza",
@@ -37,6 +39,7 @@ export const offers: Offer[] = [
         ],
         fullDescription: "Visita el Balneario de Archena y tómate ese respiro que tanto necesitas...",
         included: ["Acceso al circuito termal Balnea (2h)", "Para 2 personas", "Tratamientos de belleza incluidos"],
+        type: 1,
     },
     {
         id: 2,
@@ -61,6 +64,7 @@ export const offers: Offer[] = [
         fullDescription:
             "Explora Atenas, visita Delfos y su Oráculo, y maravillate en Kalambaka. ¡Prepara tu maleta y vive la magia!",
         included: ["Vuelos de ida y vuelta", "Alojamiento en hotel de 4 estrellas", "Visitas guiadas a Atenas y Delfos"],
+        type: 8,
     },
     {
         id: 3,
@@ -85,6 +89,7 @@ export const offers: Offer[] = [
         fullDescription:
             "Explora Atenas, visita Delfos y su Oráculo, y maravillate en Kalambaka. ¡Prepara tu maleta y vive la magia!",
         included: ["Vuelos de ida y vuelta", "Alojamiento en hotel de 4 estrellas", "Visitas guiadas a Atenas y Delfos"],
+        type: 8,
     },
     {
         id: 4,
@@ -104,6 +109,7 @@ export const offers: Offer[] = [
         ],
         fullDescription: "Disfruta de una escapada romántica a París con tu pareja. Incluye vuelos, hotel y actividades.",
         included: ["Vuelos de ida y vuelta", "Alojamiento en hotel de 4 estrellas", "Cena romántica para dos"],
+        type: 8,
     },
     {
         id: 5,
@@ -124,6 +130,7 @@ export const offers: Offer[] = [
         fullDescription:
             "Vive una aventura inolvidable en la selva amazónica. Incluye alojamiento en eco-lodge y actividades.",
         included: ["Alojamiento en eco-lodge", "Visitas guiadas a la selva", "Actividades de aventura"],
+        type: 6,
     },
     {
         id: 6,
@@ -144,6 +151,7 @@ export const offers: Offer[] = [
         fullDescription:
             "Experimenta un safari inolvidable en África. Incluye alojamiento en un lodge de lujo y actividades.",
         included: ["Alojamiento en lodge de lujo", "Safaris guiados", "Actividades de observación de animales"],
+        type: 7,
     },
     {
         id: 7,
@@ -163,6 +171,7 @@ export const offers: Offer[] = [
         ],
         fullDescription: "Disfruta de un crucero por el Mediterráneo. Incluye alojamiento en camarote y actividades.",
         included: ["Alojamiento en camarote", "Comida y bebida incluidas", "Actividades a bordo"],
+        type: 6,
     },
     {
         id: 8,
@@ -182,6 +191,7 @@ export const offers: Offer[] = [
         ],
         fullDescription: "Relájate en una escapada a la playa. Incluye alojamiento en hotel y actividades.",
         included: ["Alojamiento en hotel", "Acceso a la playa", "Actividades acuáticas"],
+        type: 6,
     },
     {
         id: 9,
@@ -201,6 +211,7 @@ export const offers: Offer[] = [
         ],
         fullDescription: "Visita la ciudad de Nueva York. Incluye vuelos, hotel y actividades.",
         included: ["Vuelos de ida y vuelta", "Alojamiento en hotel", "Visitas guiadas"],
+        type: 8,
     },
     {
         id: 10,
@@ -220,6 +231,7 @@ export const offers: Offer[] = [
         ],
         fullDescription: "Disfruta de una escapada a la montaña. Incluye alojamiento en cabaña y actividades.",
         included: ["Alojamiento en cabaña", "Actividades al aire libre", "Comida y bebida incluidas"],
+        type: 7,
     },
     {
         id: 11,
@@ -239,6 +251,7 @@ export const offers: Offer[] = [
         ],
         fullDescription: "Visita la ciudad de Roma. Incluye vuelos, hotel y actividades.",
         included: ["Vuelos de ida y vuelta", "Alojamiento en hotel", "Visitas guiadas"],
+        type: 8,
     },
     {
         id: 12,
@@ -258,5 +271,6 @@ export const offers: Offer[] = [
         ],
         fullDescription: "Disfruta de una escapada a la nieve. Incluye alojamiento en hotel y actividades.",
         included: ["Alojamiento en hotel", "Acceso a pistas de esquí", "Actividades de nieve"],
+        type: 7,
     },
 ]
