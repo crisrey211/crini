@@ -53,6 +53,30 @@ h1 {
   }
 }
 
+@layer utilities {
+  .text-highlight {
+    @apply text-blue-500 font-bold underline;
+  }
+  .text-xs-normal{
+    @apply font-normal size-5 text-xs leading-7 mb-4 h-7 w-52 text-center;
+  }
+  .text-sm-normal{
+    @apply font-bold size-5 text-xl leading-7 mb-4 h-7 w-52;
+  }
+  .text-sm-medium{
+    @apply text-sm text-textColor-gray hover:cursor-pointer;
+  }
+  .text-base-medium{
+    @apply text-base leading-6 ;
+  }
+  .text-lg-normal{
+    @apply font-normal text-lg leading-7 text-textColor-mutedForeground;
+  }
+  .text-5x-bold{
+    @apply font-bold text-5xl leading-10 text-textColor-foreground
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

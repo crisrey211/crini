@@ -7,9 +7,7 @@ export default function Footer() {
     return (
         <footer className="bg-brand-900 text-white py-11">
             <div className="container mx-auto flex flex-col gap-14 px-4 md:px-8">
-                <div
-                    className="grid grid-cols-1 gap-4 sm:px-6 lg:grid-cols-2 lg:px-0 md:grid-cols-2"
-                >
+                <div className="grid grid-cols-1 gap-4 sm:px-6 lg:grid-cols-2 lg:px-0 md:grid-cols-2">
                     <div className="flex flex-col gap-4 md:w-3/5">
                         <V1_logo_white />
                         <p className="text-base-medium md:text-balance">
@@ -22,7 +20,9 @@ export default function Footer() {
                         <div className="min-w-52 px-3">
                             <h3 className="text-sm-normal">Atención al cliente</h3>
                             <ul className="space-y-2">
-                                <li><a href="/contacto" className="text-sm-medium">Contáctanos</a></li>
+                                <li>
+                                    <a href="/contacto" className="text-sm-medium">Contáctanos</a>
+                                </li>
                                 <li>
                                     <a href="/privacidad" className="text-sm-medium"
                                     >Aviso de privacidad
@@ -55,17 +55,13 @@ export default function Footer() {
                             <h3 className="text-sm-normal">Síguenos</h3>
                             <ul className="space-y-2">
                                 <li>
-                                    <a
-                                        href="https://facebook.com"
-                                        className="text-sm hover:cursor-pointer flex items-center"
-                                    >
+                                    <a href="https://facebook.com" className="text-sm hover:cursor-pointer flex items-center">
                                         <Facebook />
                                         <span className="text-textColor-gray">Facebook</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a
-                                        href="https://whatsapp.com"
+                                    <a href="https://whatsapp.com"
                                         className="text-sm hover:cursor-pointer flex items-center"
                                     >
                                         <Whatsapp />
@@ -90,7 +86,7 @@ export default function Footer() {
                     Copyright © 2025 Crinigo. Todos los derechos reservados.
                 </p>
             </div>
-        </footer>
+        </footer >
 
     )
 }
