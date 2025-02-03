@@ -4,6 +4,7 @@ import Banner from "@/components/sections/Banner";
 import LastestOffers from "@/components/sections/LastestOffers";
 import Socialnetwork from "@/components/sections/Socialnetwork";
 import Testimonials from "@/components/sections/Testimonials";
+
 export default function Home() {
   return (
     <div className="w-full min-h-screen">
