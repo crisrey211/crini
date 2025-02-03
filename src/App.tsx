@@ -1,31 +1,18 @@
-import { Button } from "@/components/ui/button"
-import { useState } from 'react'
-import './App.css'
+import { Route, Routes } from "react-router-dom";
+import './App.css';
+import Navbar from "./components/Navbar";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className="p-10">
-        <h1 className="text-3xl font-bold text-red-500">Prueba Tailwind</h1>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-          Botón Tailwind
-        </button>
-      </div>
-      <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-        Botón Tailwind
-      </button>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <div>
-          <Button>Click me</Button>
-        </div>
-
-      </div>
-
+      <Navbar />
+      <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+      </Routes>
     </>
   )
 }
