@@ -175,7 +175,7 @@ export default function Navbar() {
                                         <Whatsapp />
                                     </Link>
                                 </div>
-                                <Button className="w-full rounded-full mt-8">Solicitar cotización</Button>
+                                <Link to="/contacto/cotizacion" className="w-full rounded-full mt-8">Solicitar cotización</Link>
                             </div>
                         </SheetContent>
                     </Sheet>
