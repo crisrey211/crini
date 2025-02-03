@@ -67,10 +67,6 @@ export const menuItems: MenuItem[] = [
         href: "/afiliados",
     },
     {
-        title: "Destinos",
-        href: "/destinos",
-    },
-    {
         title: "Quiénes somos",
         href: "/about",
     },

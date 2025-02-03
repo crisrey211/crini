@@ -17,8 +17,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { menuItems } from '../data/menuItems';
 
-
-
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     const [, setIsMobile] = useState<boolean>(false)
@@ -37,7 +35,7 @@ export default function Navbar() {
     }, [])
 
     return (
-        <nav className="relative top-10 z-50 bg-white border-b rounded-lg shadow-md w-full">
+        <nav className="relative z-50 bg-white border-b rounded-lg shadow-md w-full">
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
