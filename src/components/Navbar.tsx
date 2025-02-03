@@ -1,12 +1,7 @@
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import Telegram from "@/assets/icons/telegram.svg";
 import Facebook from "@/assets/icons/facebook.svg";
+import Telegram from "@/assets/icons/telegram.svg";
 import Whatsapp from "@/assets/icons/whatsapp.svg";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet"
-import { Menu, Zap, TreePalmIcon as PalmTree, ChevronDown, X } from "lucide-react"
-import { menuItems } from '../data/menuItems';
-import { Link } from "react-router-dom"
+import { Button } from "@/components/ui/button";
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -15,13 +10,18 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
+import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { menuItems } from '../data/menuItems';
 
 
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
-    const [isMobile, setIsMobile] = useState(false)
+    const [, setIsMobile] = useState<boolean>(false)
 
     useEffect(() => {
         const checkMobile = () => {

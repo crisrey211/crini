@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { ChevronDown } from "lucide-react"
 
 interface SubmenuItem {
     title: string;

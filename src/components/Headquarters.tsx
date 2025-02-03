@@ -58,7 +58,7 @@ export default function Headquarters({ name, address, phone, schedule, mapPositi
                         </p>
                         <p className="font-semibold mb-2">Horario:</p>
                         <ul className="list-disc list-inside">
-                            {schedule.map((item: unknown) => (
+                            {schedule.map((item: ReactNode) => (
                                 <li>{item}</li>
                             ))}
                         </ul>
