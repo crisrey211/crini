@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="w-full min-h-screen">
-      <Alert />
+      <Alert message={"¡Estrenamos página web! En esta parte estarán las alertas y novedades!"} />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

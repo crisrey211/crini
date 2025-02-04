@@ -11,6 +11,10 @@ import Handbag from "@/assets/icons/handbag.svg";
 import Plaza from "@/assets/icons/plaza.svg";
 import Airplane from "@/assets/icons/airplane.svg";
 import Box from "@/assets/icons/box.svg";
+import Calendar from "@/assets/icons/calendar.svg";
+import Haze from "@/assets/icons/haze.svg";
+import Check from "@/assets/icons/check.svg";
+import Plus from "@/assets/icons/plus.svg";
 
 const filters = {
     Todos: 0,
@@ -120,8 +124,8 @@ export default function LatestOffers() {
                             </Button>
                         ))}
                         {!showAllFilters && !isMobile && (
-                            <Button variant="outline" onClick={() => setShowAllFilters(true)}>
-                                <span className="mr-2">➕</span>
+                            <Button variant="outline" className="rounded-full" onClick={() => setShowAllFilters(true)}>
+                                <span className="mr-2"><Plus /></span>
                                 Ver más
                             </Button>
                         )}
@@ -158,19 +162,19 @@ export default function LatestOffers() {
                                         <div className="space-y-2 mb-4">
                                             {offer.details?.map((detail, i) => (
                                                 <div key={i} className="flex items-center text-gray-600">
-                                                    <span className="mr-2">✓</span>
+                                                    <span className="mr-2"><Check /></span>
                                                     {detail}
                                                 </div>
                                             ))}
                                             {offer.duration && (
                                                 <div className="flex items-center text-gray-600">
-                                                    <span className="mr-2">🕒</span>
+                                                    <span className="mr-2"><Haze /></span>
                                                     {offer.duration}
                                                 </div>
                                             )}
                                             {offer.dates && (
                                                 <div className="flex items-center text-gray-600">
-                                                    <span className="mr-2">📅</span>
+                                                    <span className="mr-2"><Calendar /></span>
                                                     {offer.dates}
                                                 </div>
                                             )}
@@ -199,13 +203,13 @@ export default function LatestOffers() {
                     {/* Navegación del carrusel */}
                     {!showAllOffers && (
                         <div className="flex justify-center items-center gap-4 mt-8">
-                            <Button variant="outline" size="icon" onClick={prevPage} disabled={currentPage === 1}>
+                            <Button className="rounded-full" variant="outline" size="icon" onClick={prevPage} disabled={currentPage === 1}>
                                 <ChevronLeft className="h-4 w-4" />
                             </Button>
                             <span className="text-sm font-medium">
                                 {currentPage.toString().padStart(2, "0")} / {totalPages.toString().padStart(2, "0")}
                             </span>
-                            <Button variant="outline" size="icon" onClick={nextPage} disabled={currentPage === totalPages}>
+                            <Button className="rounded-full" variant="outline" size="icon" onClick={nextPage} disabled={currentPage === totalPages}>
                                 <ChevronRight className="h-4 w-4" />
                             </Button>
                         </div>
@@ -214,8 +218,8 @@ export default function LatestOffers() {
                     {/* Botón "Ver más ofertas" para escritorio */}
                     {!isMobile && !showAllOffers && filteredOffers.length > itemsPerPage && (
                         <div className="flex justify-center mt-8">
-                            <Button variant="outline" onClick={() => setShowAllOffers(true)}>
-                                <span className="mr-2">➕</span>
+                            <Button variant="outline" className="rounded-full" onClick={() => setShowAllOffers(true)}>
+                                <span className="mr-2"><Plus /></span>
                                 Ver más ofertas
                             </Button>
                         </div>

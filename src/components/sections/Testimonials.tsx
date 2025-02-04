@@ -35,7 +35,7 @@ export default function Testimonials() {
                         </div>
                     </div>
 
-                    <div className="flex-1 mt-8 md:mt-0">
+                    <div className="flex-1 mt-8 md:mt-0 w-full max-w-full overflow-hidden">
                         {isMobile ? <MarqueeDemoHorizontal /> : <MarqueeDemoVertical />}
                     </div>
                 </div>

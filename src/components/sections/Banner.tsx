@@ -1,3 +1,7 @@
+
+import ArrowuprightIcon from "@/assets/icons/arrow-up-right.svg";
+
+
 export default function Banner() {
     return (<section className="relative bg-brand-900 text-white py-12">
         <div
@@ -16,9 +20,10 @@ export default function Banner() {
 
             <div className="mt-6 md:mt-0">
                 <button
-                    className="bg-white text-teal-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+                    className="flex justify-center items-center bg-white text-teal-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-100"
                 >
                     Financia tu viaje ahora
+                    <ArrowuprightIcon />
                 </button>
             </div>
         </div>
