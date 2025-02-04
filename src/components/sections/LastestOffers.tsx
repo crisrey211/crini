@@ -1,20 +1,20 @@
-import { useState, useEffect } from "react"
+import Airplane from "@/assets/icons/airplane.svg"
+import Box from "@/assets/icons/box.svg"
+import Calendar from "@/assets/icons/calendar.svg"
+import Check from "@/assets/icons/check.svg"
+import Handbag from "@/assets/icons/handbag.svg"
+import Haze from "@/assets/icons/haze.svg"
+import Plaza from "@/assets/icons/plaza.svg"
+import Plus from "@/assets/icons/plus.svg"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { motion, AnimatePresence } from "framer-motion"
-import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { offerquestions } from "@/data/offerquestions";
-import { offers } from "@/data/offers";
-import Handbag from "@/assets/icons/handbag.svg";
-import Plaza from "@/assets/icons/plaza.svg";
-import Airplane from "@/assets/icons/airplane.svg";
-import Box from "@/assets/icons/box.svg";
-import Calendar from "@/assets/icons/calendar.svg";
-import Haze from "@/assets/icons/haze.svg";
-import Check from "@/assets/icons/check.svg";
-import Plus from "@/assets/icons/plus.svg";
+import { offerquestions } from "@/data/offerquestions"
+import { offers } from "@/data/offers"
+import { AnimatePresence, motion } from "framer-motion"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useEffect, useState } from "react"
 
 const filters = {
     Todos: 0,
