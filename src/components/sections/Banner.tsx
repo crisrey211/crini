@@ -11,7 +11,7 @@ export default function Banner() {
                 <h1 className="text-3xl md:text-4xl font-bold mb-4">
                     Viaja hoy, paga a tu ritmo
                 </h1>
-                <p className="text-base md:text-lg mb-6">
+                <p className="text-base text-gray-300 md:text-lg mb-6">
                     Descubre el mundo sin preocuparte por el presupuesto. Con nuestra
                     financiación flexible, tus sueños de viajar se hacen realidad. ¡Empieza
                     tu aventura ahora!
