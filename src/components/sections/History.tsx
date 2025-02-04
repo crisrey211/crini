@@ -6,13 +6,13 @@ export default function History() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] w-full">
                 <div className="flex flex-col gap-6 p-10 md:p-16 w-full max-w-[635px]">
                     <h2 className="text-5xl font-bold mb-6">Sobre Crinigo</h2>
-                    <p className="text-lg">
+                    <p className="text-lg-normal">
                         En nuestra agencia de viajes, cada destino comienza con un sueño, y ese
                         sueño nació del esfuerzo, la pasión y la determinación de una mujer
                         emprendedora que quiso acercar a las personas a lo que más importa: sus
                         seres queridos y sus momentos más preciados.
                     </p>
-                    <p className="text-lg">
+                    <p className="text-lg-normal">
                         Entendemos que viajar no es solo recorrer kilómetros, sino crear
                         experiencias inolvidables que llenan el corazón de alegría. Por eso,
                         trabajamos incansablemente para ofrecer servicios de máxima calidad,

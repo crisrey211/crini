@@ -10,7 +10,10 @@
     @apply font-normal size-5 text-xs leading-7 mb-4 h-7 w-52 text-center;
   }
   .text-sm-normal{
-    @apply font-bold size-5 text-xl leading-7 mb-4 h-7 w-52;
+    @apply font-bold size-5 text-xl leading-7 mb-4 h-7 w-52 text-textColor-mutedForeground;
+  }
+  .text-sm-normal-footer{
+    @apply font-bold size-5 text-xl leading-7 mb-4 h-7 w-52 text-white;
   }
   .text-sm-medium{
     @apply text-sm text-textColor-gray hover:cursor-pointer;
@@ -20,6 +23,9 @@
   }
   .text-lg-normal{
     @apply font-normal text-lg leading-7 text-textColor-mutedForeground;
+  }
+  .text-xl-bold{
+    @apply  text-white
   }
   .text-5x-bold{
     @apply font-bold text-5xl leading-10 text-textColor-foreground
@@ -87,6 +93,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-[#F9FBFD] text-foreground font-inter;
   }
 }

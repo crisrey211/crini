@@ -3,7 +3,7 @@ import Medal from "@icons/medal.svg";
 
 export default function Essence() {
     return (
-        <div className="bg-gray-50 py-10 px-6">
+        <div className=" py-10 px-6">
             <div className="container mx-auto max-w-[1440px]">
                 <h2 className="text-3xl font-bold text-center mb-10">Nuestra Esencia</h2>
 
@@ -17,7 +17,7 @@ export default function Essence() {
                             <Crown />
                         </div>
                         <h3 className="text-xl font-semibold">Misión</h3>
-                        <p className="text-gray-700 text-base">
+                        <p className="text-lg-normal">
                             Ayudamos a las personas a viajar y reunirse con sus seres queridos,
                             ofreciendo un servicio personalizado y atención de excelencia.
                             Planificamos viajes únicos que combinan comodidad y alegría, creando
@@ -36,7 +36,7 @@ export default function Essence() {
                             <Medal />
                         </div>
                         <h3 className="text-xl font-semibold">Visión</h3>
-                        <p className="text-gray-700 text-base">
+                        <p className="text-lg-normal">
                             Aspiramos a ser una agencia de viajes destacada nacional e
                             internacionalmente por nuestro trato humano, precios justos y
                             profesionalismo. Queremos ser la primera opción para quienes buscan
