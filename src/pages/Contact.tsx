@@ -5,30 +5,27 @@ import Socialnetwork from "@/components/sections/Socialnetwork";
 import { Outlet, useLocation } from "react-router-dom";
 
 export default function Contact() {
-  // Obtener la ubicación actual de la ruta
   const location = useLocation();
-
-  // Comprobar si estamos en la subruta /cotizacion
-  const isCotizacionRoute = location.pathname === "/contacto/cotizacion";
+  const isMainContactRoute = location.pathname === "/contacto"; // Detectar si estamos en /contacto
 
   return (
     <div className="w-full min-h-screen">
-      <Hero title="Estamos aquí para planear tu próxima aventura" />
+      {/* Solo muestra Hero en la ruta principal /contacto */}
+      {isMainContactRoute && (
+        <Hero title="Estamos aquí para planear tu próxima aventura" />
+      )}
 
-      {/* Renderiza Outlet solo si no estás en la subruta /cotizacion */}
-      {!isCotizacionRoute && (
+      {/* Renderizar Outlet para subrutas */}
+      <Outlet />
+
+      {/* Renderizar contenido adicional solo en la página principal */}
+      {isMainContactRoute && (
         <>
           <Location />
           <FAQS />
           <Socialnetwork />
         </>
       )}
-      <Outlet />
-
-      {/* Siempre muestra FAQS en la subruta cotizacion */}
-      {isCotizacionRoute && <FAQS />}
-
-      {/* Este es el espacio donde se renderiza la subruta */}
     </div>
   );
 }

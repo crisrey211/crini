@@ -1,5 +1,10 @@
 import Multistepper from "@/components/Multistepper";
+import Hero from "@/components/sections/Hero";
 
 export default function Cotizacion() {
-    return (<h1><Multistepper /></h1>)
+    return (
+        <Hero hideContent>
+            <Multistepper />
+        </Hero>
+    )
 }
