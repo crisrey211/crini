@@ -92,7 +92,7 @@ export default function LatestOffers() {
                     viewport={{ once: true }}
                 >
                     <div className="w-1/2">
-                        <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 font-inter ">Últimas ofertas</h1>
+                        <h1 className="text-3xl lg:text-5xl font-bold text-gray-800">Últimas ofertas</h1>
                         <p className="text-gray-600">
                             Ya sea que busques emocionantes aventuras, escapadas tranquilas o inmersiones culturales, nuestros itinerarios cuidadosamente seleccionados ofrecen una mezcla inolvidable de exploración y relajación.
                         </p>

@@ -55,7 +55,7 @@ export default function NuevoDemo() {
                         transition={{ duration: 0.5, delay: 0.4 }}
                         viewport={{ once: true }}
                     >
-                        <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 font-inter ">Síguenos en nuestras redes sociales</h1>
+                        <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 ">Síguenos en nuestras redes sociales</h1>
                         <div className="flex justify-center gap-6">
                             <div className="flex items-center gap-2 mt-6">
                                 <Facebook />

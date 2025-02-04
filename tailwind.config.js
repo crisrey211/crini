@@ -3,7 +3,10 @@ export default exports = {
 	darkMode: ["class"],
 	content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
 	theme: {
-    	extend: {
+		extend: {
+			fontFamily: {
+				"inter":['Inter','sans-serif']
+			},
     		borderRadius: {
     			lg: 'var(--radius)',
     			md: 'calc(var(--radius) - 2px)',

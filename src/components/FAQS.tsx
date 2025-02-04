@@ -4,7 +4,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 export default function FAQS() {
     return (
         <section className="bg-background-white py-11 px-4 flex flex-col items-center">
-            <h1 className="text-5xl font-bold text-gray-800 font-inter text-center">
+            <h1 className="text-5xl font-bold text-gray-800 text-center">
                 Preguntas frecuentes
             </h1>
 
