@@ -24,7 +24,7 @@ interface MenuItem {
 export const menuItems: MenuItem[] = [
     {
         title: "Planes",
-        href: "/latest-offers",
+        href: "/ofertas",
         submenu: {
             image: {
                 src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-eWpPXFGW8GGAiln5cb1apVG5oqYm86.png",
@@ -68,7 +68,7 @@ export const menuItems: MenuItem[] = [
     },
     {
         title: "Quiénes somos",
-        href: "/about",
+        href: "/nosotros",
     },
     {
         title: "Contáctanos",

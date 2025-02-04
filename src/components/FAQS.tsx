@@ -7,11 +7,11 @@ import {
 
 export default function FAQS() {
     return (
-        <section className="bg-background-white  py-11 px-4 items-center flex flex-col md:p-20">
+        <section className="bg-background-white  py-11 px-4 items-center flex flex-col">
             <h1 className="text-5xl font-bold text-gray-800 font-inter text-center">
                 Preguntas frecuentes
             </h1>
-            <Accordion type="single" collapsible className="w-1/2">
+            <Accordion type="single" collapsible className="border rounded-lg solid p-10 md:w-1/3 mt-6">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>Is it accessible?</AccordionTrigger>
                     <AccordionContent>

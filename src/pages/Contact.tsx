@@ -13,7 +13,7 @@ export default function Contact() {
 
   return (
     <div className="w-full min-h-screen">
-      <Hero title="Conoce nuestra pasión por hacerte viajar" />
+      <Hero title="Estamos aquí para planear tu próxima aventura" />
 
       {/* Renderiza Outlet solo si no estás en la subruta /cotizacion */}
       {!isCotizacionRoute && (

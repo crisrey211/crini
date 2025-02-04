@@ -20,7 +20,8 @@ export default exports = {
     				'600': '#CF4326',
     				'700': '#B53A20',
     				'800': '#96331E',
-    				'900': '#004150'
+					'900': '#004150',
+					secondary: "#18C9F3"
     			},
     			textColor: {
     				gray: '#D1D5DB',

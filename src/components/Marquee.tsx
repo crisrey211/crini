@@ -1,43 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/ui/marquee";
-const reviews = [
-    {
-        name: "Jack",
-        username: "@jack",
-        body: "Gracias a Crinigo, nuestras vacaciones en Grecia fueron increíbles. Todo estuvo perfectamente organizado..",
-        img: "https://avatar.vercel.sh/jack",
-    },
-    {
-        name: "Jill",
-        username: "@jill",
-        body: "Gracias a Crinigo, nuestras vacaciones en Grecia fueron increíbles. Todo estuvo perfectamente organizado.",
-        img: "https://avatar.vercel.sh/jill",
-    },
-    {
-        name: "John",
-        username: "@john",
-        body: "Gracias a Crinigo, nuestras vacaciones en Grecia fueron increíbles. Todo estuvo perfectamente organizado.",
-        img: "https://avatar.vercel.sh/john",
-    },
-    {
-        name: "Jane",
-        username: "@jane",
-        body: "Gracias a Crinigo, nuestras vacaciones en Grecia fueron increíbles. Todo estuvo perfectamente organizado.",
-        img: "https://avatar.vercel.sh/jane",
-    },
-    {
-        name: "Jenny",
-        username: "@jenny",
-        body: "Gracias a Crinigo, nuestras vacaciones en Grecia fueron increíbles. Todo estuvo perfectamente organizado.",
-        img: "https://avatar.vercel.sh/jenny",
-    },
-    {
-        name: "James",
-        username: "@james",
-        body: "Gracias a Crinigo, nuestras vacaciones en Grecia fueron increíbles. Todo estuvo perfectamente organizado.",
-        img: "https://avatar.vercel.sh/james",
-    },
-];
+import { reviews } from "@/data/reviews"
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);

@@ -1,4 +1,6 @@
 import Facebook from "@/assets/icons/facebook.svg";
+import Zap from "@/assets/icons/zap.svg";
+import Beach from "@/assets/icons/beach.svg";
 import Telegram from "@/assets/icons/telegram.svg";
 import Whatsapp from "@/assets/icons/whatsapp.svg";
 import { Button } from "@/components/ui/button";
@@ -15,7 +17,7 @@ import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger 
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { menuItems } from '../data/menuItems';
+import { menuItems } from '@/data/menuItems';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -40,7 +42,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <Link to="/" className="flex-shrink-0">
-                        <img src="/logo.svg" alt="Ciringo" width={120} height={40} className="h-8 w-auto" />
+                        <img src="/logo_v2_black.png" alt="Cringo logo" width={120} height={40} className="h-8 w-auto" />
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -52,14 +54,14 @@ export default function Navbar() {
                                         {item.submenu ? (
                                             <NavigationMenuTrigger className="group">
                                                 {item.title}
-                                                {/* {item.icon} */}
                                             </NavigationMenuTrigger>
                                         ) : (
-                                            <Link to="/contacto"
+                                            <Link to={item.href}
                                             >
                                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                                     <span>{item.title}</span>
-                                                    {item.icon && <span className="ml-2">{item.icon}</span>}
+                                                    {item.icon && <span className="ml-2">{item.icon}
+                                                    </span>}
                                                 </NavigationMenuLink>
                                             </Link>
                                         )}
@@ -99,7 +101,8 @@ export default function Navbar() {
 
                     {/* CTA Button */}
                     <div className="hidden lg:block">
-                        <Button className="rounded-full">Solicitar cotización</Button>
+                        {/* <Button className="rounded-full">Solicitar cotización</Button> */}
+                        <Link to="/contacto/cotizacion" className="rounded-full bg-brand-secondary py-1.5 px-1.5  ">Solicitar cotización</Link>
                     </div>
 
                     {/* Mobile Menu Button */}
