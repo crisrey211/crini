@@ -7,6 +7,10 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { offerquestions } from "@/data/offerquestions";
 import { offers } from "@/data/offers";
+import Handbag from "@/assets/icons/handbag.svg";
+import Plaza from "@/assets/icons/plaza.svg";
+import Airplane from "@/assets/icons/airplane.svg";
+import Box from "@/assets/icons/box.svg";
 
 const filters = {
     Todos: 0,
@@ -21,10 +25,10 @@ const filters = {
 }
 
 const filterButtons = [
-    { icon: "🎁", text: "Paquetes vacacionales" },
-    { icon: "📦", text: "Cajas de smartbox" },
-    { icon: "✈️", text: "Vuelos" },
-    { icon: "🏨", text: "Vuelos + Hotel" },
+    { icon: <Handbag />, text: "Paquetes vacacionales" },
+    { icon: <Box />, text: "Cajas de smartbox" },
+    { icon: <Airplane />, text: "Vuelos" },
+    { icon: <Plaza />, text: "Vuelos + Hotel" },
     { icon: "🚗", text: "Alquiler de coches" },
     { icon: "🏖️", text: "Playas" },
     { icon: "🏔️", text: "Montaña" },
@@ -82,12 +86,17 @@ export default function LatestOffers() {
         <section className="py-16 px-4">
             <div className="container mx-auto">
                 <motion.h2
-                    className="text-4xl font-bold text-center mb-4"
+                    className="text-center mb-4 flex justify-center"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    Últimas ofertas
+                    <div className="w-1/2">
+                        <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 font-inter ">Últimas ofertas</h1>
+                        <p className="text-gray-600">
+                            Ya sea que busques emocionantes aventuras, escapadas tranquilas o inmersiones culturales, nuestros itinerarios cuidadosamente seleccionados ofrecen una mezcla inolvidable de exploración y relajación.
+                        </p>
+                    </div>
                 </motion.h2>
 
                 {/* Botones de filtro */}
@@ -106,8 +115,8 @@ export default function LatestOffers() {
                                     setCurrentPage(1)
                                 }}
                             >
-                                <span className="mr-2">{filterButtons[index]?.icon || "🏷️"}</span>
-                                {value === 0 ? "Todos" : value}
+                                <span className="mr-2"> {filterButtons[index]?.icon || "🏷️"}</span>
+                                {value === 0 ? "Todos" : filterButtons[index]?.text}
                             </Button>
                         ))}
                         {!showAllFilters && !isMobile && (
