@@ -1,6 +1,4 @@
 import Facebook from "@/assets/icons/facebook.svg";
-import Zap from "@/assets/icons/zap.svg";
-import Beach from "@/assets/icons/beach.svg";
 import Telegram from "@/assets/icons/telegram.svg";
 import Whatsapp from "@/assets/icons/whatsapp.svg";
 import { Button } from "@/components/ui/button";
@@ -14,10 +12,10 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { menuItems } from '@/data/menuItems';
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { menuItems } from '@/data/menuItems';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)

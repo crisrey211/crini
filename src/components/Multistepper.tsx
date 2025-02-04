@@ -18,7 +18,6 @@ import { toast } from 'sonner'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import MultiStepForm, { type FormStep } from '@/components/ui/multi-step-form'
-import { Switch } from '@/components/ui/switch'
 
 const formSteps: FormStep[] = [
     {
@@ -177,7 +176,7 @@ const formSteps: FormStep[] = [
 ]
 
 export default function ExtendedForm() {
-    const [isCompact, setIsCompact] = useState(false)
+    const [isCompact,] = useState(false)
     const formRef = useRef<HTMLFormElement>(null)
 
     const handleComplete = (selections: Record<string | number, string>) => {
