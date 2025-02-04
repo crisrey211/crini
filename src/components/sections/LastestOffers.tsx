@@ -8,10 +8,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { offerquestions } from "@/data/offerquestions";
 import { offers } from "@/data/offers";
 
-// Datos de ejemplo ampliados para el carrusel
-
-
-
 const filters = {
     Todos: 0,
     "Paquetes vacacionales": 1,
@@ -102,6 +98,7 @@ export default function LatestOffers() {
                     >
                         {visibleFilters.map(([key, value], index) => (
                             <Button
+                                className="rounded-full"
                                 key={key}
                                 variant={activeFilter === value ? "default" : "outline"}
                                 onClick={() => {
@@ -172,7 +169,7 @@ export default function LatestOffers() {
                                         <div className="my-4 text-center">
                                             <hr className="w-1/2 mx-auto border-t border-gray-300" />
                                         </div>
-                                        <div className="mt-4">
+                                        <div className="flex flex-col items-center">
                                             <div className="text-sm text-gray-500">Desde</div>
                                             <div className="flex items-baseline gap-2">
                                                 <span className="text-gray-400 line-through text-sm">{offer.price.original}</span>
@@ -181,7 +178,7 @@ export default function LatestOffers() {
                                             {offer.priceNote && <div className="text-sm text-gray-500">{offer.priceNote}</div>}
                                         </div>
 
-                                        <Button className="w-full mt-4" onClick={() => setSelectedOffer(offer)}>
+                                        <Button className="w-full mt-4 rounded-full" onClick={() => setSelectedOffer(offer)}>
                                             Ver detalles
                                         </Button>
                                     </div>

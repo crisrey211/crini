@@ -99,8 +99,9 @@ export default function Navbar() {
 
                     {/* CTA Button */}
                     <div className="hidden lg:block">
-                        {/* <Button className="rounded-full">Solicitar cotización</Button> */}
-                        <Link to="/contacto/cotizacion" className="rounded-full bg-brand-secondary py-1.5 px-1.5  ">Solicitar cotización</Link>
+                        <Link to="/contacto/cotizacion" >
+                            <Button className="rounded-full">Solicitar cotización</Button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
