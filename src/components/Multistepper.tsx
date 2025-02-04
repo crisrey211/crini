@@ -24,15 +24,9 @@ const formSteps: FormStep[] = [
     {
         level: 1,
         id: 'project-type',
-        title: 'Select Your Project Type',
-        description: 'What type of project are you working on?',
+        title: '¿Qué plan quieres elegir hoy?',
+        description: 'Elige el plan perfecto para ti y aprovecha al máximo sus beneficios.',
         items: [
-            {
-                id: 'custom',
-                title: 'Custom',
-                description: 'This is a Card with no image or icon',
-                validNextSteps: ['nextjs', 'astro', 'remix', 'next-commerce'],
-            },
             {
                 id: 'webapp',
                 title: 'Web Application',
@@ -71,8 +65,8 @@ const formSteps: FormStep[] = [
     {
         level: 2,
         id: 'framework',
-        title: 'Choose Framework',
-        description: 'Select the framework that fits your project best',
+        title: 'Encuentra el paquete que necesitas',
+        description: 'Descubre nuestras opciones y selecciona el paquete que mejor se adapte a tus necesidades.',
         items: [
             {
                 id: 'nextjs',
@@ -226,23 +220,7 @@ export default function ExtendedForm() {
 
     return (
         <MultiStepForm
-            title={
-                <div className="flex items-center justify-between w-full flex-col space-y-4">
-                    <div className="flex items-center gap-2">
-                        <Code2Icon className="h-6 w-6" />
-                        <span className="font-semibold">Next Vista</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                        <Label className="text-sm font-medium">Default</Label>
-                        <Switch
-                            id="compact-mode"
-                            checked={isCompact}
-                            onCheckedChange={setIsCompact}
-                        />
-                        <Label className="text-sm font-medium">Compact</Label>
-                    </div>
-                </div>
-            }
+
             formSteps={formSteps}
             onComplete={handleComplete}
             variant={isCompact ? 'compact' : 'default'}

@@ -9,7 +9,7 @@ export default function Hero({ title, subtitle, hideContent, children }: HeroPro
     return (
         <div className="relative w-full h-screen bg-cover bg-center bg-[url('/peru.jpg')]">
             <div className="flex items-center justify-center h-full text-center text-white px-6">
-                <div className="max-w-3xl">
+                <div className="">
                     {!hideContent ? (
                         <>
                             <h1 className="text-4xl md:text-5xl font-bold">{title}</h1>
