@@ -35,7 +35,7 @@ export default function Navbar() {
     }, [])
 
     return (
-        <nav className="relative z-50 bg-white border-b rounded-lg shadow-md w-full">
+        <nav className="absolute top-20 rounded-full left-0 w-full z-50 h-[72px] flex items-center bg-white border-b shadow-md">
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
