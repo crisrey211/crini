@@ -14,7 +14,7 @@ export default function NuevoDemo() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
         >
-            <div className="container mx-auto py-48">
+            <div className="container mx-auto pb-24">
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     {/* Primer contenedor: Imágenes superpuestas */}
                     <motion.div
