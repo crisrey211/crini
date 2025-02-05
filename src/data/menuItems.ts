@@ -1,4 +1,6 @@
 import { ReactNode } from 'react';
+import Beach from '@/icons/Beach';
+import Zap from '@/icons/Zap';
 
 interface SubmenuItem {
     title: string;
@@ -17,7 +19,7 @@ interface Submenu {
 interface MenuItem {
     title: string;
     href: string;
-    icon?: ReactNode;
+    icon?: React.FC<React.SVGProps<SVGSVGElement>>; // Icono opcional (componente SVG)
     submenu?: Submenu;
 }
 
@@ -61,10 +63,12 @@ export const menuItems: MenuItem[] = [
     {
         title: "Financiación",
         href: "/financiacion",
+        icon: Zap
     },
     {
         title: "Programa de afiliados",
         href: "/afiliados",
+        icon: Beach
     },
     {
         title: "Quiénes somos",

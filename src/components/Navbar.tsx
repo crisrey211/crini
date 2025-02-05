@@ -58,8 +58,7 @@ export default function Navbar() {
                                             >
                                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                                     <span>{item.title}</span>
-                                                    {item.icon && <span className="ml-2">{item.icon}
-                                                    </span>}
+                                                    {item.icon && <span className="ml-2"><item.icon /></span>}
                                                 </NavigationMenuLink>
                                             </Link>
                                         )}
@@ -153,7 +152,7 @@ export default function Navbar() {
                                                 onClick={() => setIsOpen(false)}
                                             >
                                                 <span className="flex items-center">
-                                                    {item.icon && <span className="mr-2">{item.icon}</span>}
+                                                    {item.icon && <span className="ml-2"><item.icon /></span>}
                                                     {item.title}
                                                 </span>
                                                 <span>›</span>

@@ -3,7 +3,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 
 export default function FAQS() {
     return (
-        <section className="bg-background-white py-11 px-4 flex flex-col items-center">
+        <section className="bg-background-white py-11 px-4 flex flex-col items-center gap-16">
             <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 text-center">Preguntas frecuentes</h1>
             <Accordion type="single" collapsible className="border rounded-lg solid p-10 md:w-1/3 mt-6">
                 {faqs.map((faq) => (
