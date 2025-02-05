@@ -21,17 +21,19 @@ export default function Testimonials() {
         <section className="py-16">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-center">
-                    <div className="md:w-1/2 text-center md:text-left">
-                        <h2 className="text-3xl font-bold mb-4">¿Qué dicen nuestros clientes?</h2>
+                    <div className="md:w-1/2 text-center md:text-left space-y-6">
+                        <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 ">¿Qué dicen nuestros clientes?</h1>
                         <p className="text-gray-600">
                             En Crinigo, la satisfacción de nuestros clientes es nuestra máxima
                             prioridad. Nos enorgullecemos de las relaciones que establecemos y de
                             los éxitos que ayudamos a crear.
                         </p>
-                        <div className="flex items-center justify-center md:justify-start mt-4">
-                            <span className="text-lg font-bold mr-2">5.0</span>
-                            <Google />
-                            <span className="text-yellow-500 text-lg font-bold ml-2">★★★★★</span>
+                        <div className="flex flex-col items-start justify-start md:justify-start mt-4">
+                            <span className="text-lg font-bold mr-2">5.0 de 100 reseñas</span>
+                            <div className="flex">
+                                <Google />
+                                <span className="text-yellow-500 text-lg font-bold ml-2">★★★★★</span>
+                            </div>
                         </div>
                     </div>
 
