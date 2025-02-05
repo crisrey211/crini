@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import Beach from '@/icons/Beach';
 import Zap from '@/icons/Zap';
 
