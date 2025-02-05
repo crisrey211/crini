@@ -24,11 +24,20 @@
   .text-lg-normal{
     @apply font-normal text-lg leading-7 text-textColor-mutedForeground;
   }
+  .text-xl-medium{
+    @apply text-xl leading-7 font-medium text-textColor-mutedForeground
+  }
   .text-xl-bold{
     @apply  text-white
   }
+  .text-4xl-bold{
+    @apply font-bold text-4xl leading-10 
+  }
   .text-5x-bold{
     @apply font-bold text-5xl leading-10 text-textColor-foreground
+  }
+  .text-6xl-bold{
+    @apply font-bold text-6xl leading-[60px] text-white  
   }
 }
 

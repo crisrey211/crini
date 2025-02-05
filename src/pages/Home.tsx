@@ -8,7 +8,7 @@ import Testimonials from "@/components/sections/Testimonials";
 export default function Home() {
   return (
     <div className="w-full min-h-screen">
-      <Hero title="Explora el mundo con nuestros paquetes de viaje"
+      <Hero title="Descubre los destinos más impresionantes del mundo"
         subtitle="Explora los mejores paquetes de viaje y experiencias adaptadas a tus preferencias. 
         Permítenos ayudarte a planear las vacaciones de tus sueños."/>
       <LastestOffers />

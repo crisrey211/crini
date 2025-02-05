@@ -4,7 +4,7 @@ import LastestOffers from "@/components/sections/LastestOffers";
 export default function Plans() {
     return (
         <div className="w-full min-h-screen">
-            <Hero title="Conoce nuestra pasión por hacerte viajar" />
+            <Hero title="Explora el mundo con nuestros paquetes de viaje" />
             <LastestOffers />
         </div>
     )
