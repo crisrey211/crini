@@ -1,5 +1,3 @@
-import Beach from '@/icons/Beach';
-import Zap from '@/icons/Zap';
 
 interface SubmenuItem {
     title: string;
