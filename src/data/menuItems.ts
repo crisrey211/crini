@@ -59,7 +59,7 @@ export const menuItems: MenuItem[] = [
             ],
         },
     },
-    {
+    /* {
         title: "Financiación",
         href: "/financiacion",
         icon: Zap
@@ -68,7 +68,7 @@ export const menuItems: MenuItem[] = [
         title: "Programa de afiliados",
         href: "/afiliados",
         icon: Beach
-    },
+    }, */
     {
         title: "Quiénes somos",
         href: "/nosotros",
