@@ -1,10 +1,14 @@
+import FAQS from "@/components/FAQS";
 import Multistepper from "@/components/Multistepper";
 import Hero from "@/components/sections/Hero";
 
 export default function Cotizacion() {
     return (
-        <Hero hideContent>
-            <Multistepper />
-        </Hero>
+        <div className="w-full min-h-screen">
+            <Hero hideContent>
+                <Multistepper />
+            </Hero>
+            <FAQS />
+        </div>
     )
 }
