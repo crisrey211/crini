@@ -57,7 +57,7 @@ export type FormItem = {
 }
 
 interface OptionCardProps {
-    title: string
+    title?: string
     description?: string
     icon?: LucideIcon
     image?: string
@@ -73,7 +73,6 @@ const OptionCard = React.forwardRef<HTMLDivElement, OptionCardProps>(
     (
         {
             title,
-            description,
             icon: Icon,
             image,
             selected,
@@ -108,36 +107,33 @@ const OptionCard = React.forwardRef<HTMLDivElement, OptionCardProps>(
                                             iconClassName
                                         )}
                                     />
+
                                 )}
                             </div>
                         ) : (
                             Icon && (
                                 <div
                                     className={cn(
-                                        'flex items-center justify-center h-32 md:h-44 bg-muted',
+                                        'flex flex-col items-center justify-center h-32 md:h-44 bg-muted',
                                         imageClassName
                                     )}
                                 >
                                     <Icon
                                         className={cn(
-                                            'h-12 w-12 text-muted-foreground',
+                                            'h-8 w-8 text-muted-foreground',
                                             iconClassName
                                         )}
                                     />
+                                    <h3 className="text-sm-semibold">{title}</h3>
+
                                 </div>
                             )
                         )}
-                        <div className="p-4">
-                            <h3 className="font-semibold">{title}</h3>
-                            {description && (
-                                <p className="text-sm text-muted-foreground">{description}</p>
-                            )}
-                        </div>
                     </>
                 ) : (
                     <>
                         <div className="p-2">
-                            <h3 className="font-semibold text-center">{title}</h3>
+                            <h3 className="text-sm-semibold">{title}</h3>
                         </div>
                         {image ? (
                             <div className="relative h-32 md:h-44">                        <img
@@ -154,9 +150,10 @@ const OptionCard = React.forwardRef<HTMLDivElement, OptionCardProps>(
                                         imageClassName
                                     )}
                                 >
+                                    <h3 className="text-sm-semibold">{title}</h3>
                                     <Icon
                                         className={cn(
-                                            'h-12 w-12 text-muted-foreground',
+                                            'h-8 w-8 text-muted-foreground',
                                             iconClassName
                                         )}
                                     />

@@ -64,7 +64,7 @@ export default function ExtendedForm() {
             formSteps={formSteps}
             onComplete={handleComplete}
             variant={isCompact ? 'compact' : 'default'}
-            imageClassName="grayscale hover:grayscale-0"
+            imageClassName="bg-white hover:grayscale-0"
             cardClassName="pb-2"
             finalStep={
                 <div className="flex items-center gap-2">

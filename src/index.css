@@ -18,6 +18,9 @@
   .text-sm-medium{
     @apply text-sm text-textColor-gray hover:cursor-pointer;
   }
+  .text-sm-semibold{
+    @apply text-sm text-brand-900 leading-5 font-semibold hover:cursor-pointer;
+  }
   .text-base-medium{
     @apply text-base leading-6 ;
   }

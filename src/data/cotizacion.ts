@@ -31,8 +31,6 @@ export const formSteps: FormStep[] = [
                 id: 'website',
                 title: 'Website',
                 description: 'Card with icon & image',
-                image:
-                    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop',
                 icon: PackageOpen,
                 validNextSteps: ['nextjs', 'astro'],
             },
@@ -41,8 +39,6 @@ export const formSteps: FormStep[] = [
                 title: 'E-commerce',
                 description: 'This is a Card with only image',
                 icon: PlaneIcon,
-                image:
-                    'https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2370&auto=format&fit=crop',
                 validNextSteps: ['shopify', 'next-commerce'],
             },
             {
@@ -50,8 +46,6 @@ export const formSteps: FormStep[] = [
                 title: 'Blog',
                 description: 'Another Sample',
                 icon: Hotel,
-                image:
-                    'https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2370&auto=format&fit=crop',
                 validNextSteps: ['nextjs', 'astro'],
             },
         ],
