@@ -26,7 +26,7 @@ export default function History() {
                             className="w-16 h-16 rounded-full mr-4"
                         />
                         <div>
-                            <p className="font-bold text-gray-800">Greicy Milagros</p>
+                            <p className="font-bold text-gray-800">Greicy</p>
                             <p className="text-gray-600 text-sm">Fundadora · 7 años creando sueños</p>
                         </div>
                     </div>
