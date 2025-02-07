@@ -8,7 +8,7 @@ import Plaza from "@/assets/icons/plaza.svg"
 import Plus from "@/assets/icons/plus.svg"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { offerquestions } from "@/data/offerquestions"
 import { offers } from "@/data/offers"
@@ -227,16 +227,17 @@ export default function LatestOffers() {
                 </div>
 
                 {/* Sheet de detalles */}
+                {/* Sheet de detalles */}
                 <Sheet open={!!selectedOffer} onOpenChange={() => setSelectedOffer(null)}>
-                    <SheetContent side="right" className="w-full sm:max-w-xl">
+                    <SheetContent side="right" className="w-full md:max-w-[1000px]">
                         <SheetHeader>
                             <SheetTitle>{selectedOffer?.title}</SheetTitle>
                         </SheetHeader>
 
                         {selectedOffer && (
                             <div className="h-full overflow-y-auto pb-24 md:pb-0">
-                                {/* Carrusel de imágenes */}
-                                <div className="relative h-64 mb-6">
+                                {/* Carrusel de imágenes - Más grande en desktop */}
+                                <div className="relative h-64 md:h-[400px] mb-6">
                                     <AnimatePresence mode="wait">
                                         <motion.img
                                             key={currentImageIndex}
@@ -260,49 +261,89 @@ export default function LatestOffers() {
                                     </div>
                                 </div>
 
-                                {/* Contenido */}
-                                <div className="space-y-6">
-                                    <div>
-                                        <h3 className="font-semibold mb-2">¿Qué incluye tu experiencia?</h3>
-                                        <ul className="space-y-2">
-                                            {selectedOffer.included.map((item, index) => (
-                                                <li key={index} className="flex items-center gap-2">
-                                                    <span className="text-green-500">✓</span>
-                                                    {item}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    <div>
-                                        <h3 className="font-semibold mb-2">Descripción</h3>
-                                        <p className="text-gray-600">{selectedOffer.fullDescription}</p>
-                                    </div>
-
-                                    {/* Preguntas frecuentes */}
-                                    <div>
-                                        <h3 className="font-semibold mb-2">Preguntas frecuentes</h3>
-                                        <Accordion type="single" collapsible className="w-full">
-                                            {randomQuestions.map((q, index) => (
-                                                <AccordionItem key={index} value={`item-${index}`}>
-                                                    <AccordionTrigger>{q.question}</AccordionTrigger>
-                                                    <AccordionContent>{q.answer}</AccordionContent>
-                                                </AccordionItem>
-                                            ))}
-                                        </Accordion>
-                                    </div>
-                                </div>
-
-                                {/* Footer fijo en móvil/tablet */}
-                                <div className="fixed bottom-0 left-0 right-0 md:relative bg-white border-t md:border-t-0 p-4 md:p-0 md:mt-6">
-                                    <div className="flex items-center justify-between gap-4">
+                                {/* Layout de dos columnas en desktop */}
+                                <div className="md:grid md:grid-cols-[1fr,350px] md:gap-6">
+                                    {/* Columna izquierda: Contenido principal */}
+                                    <div className="space-y-6">
                                         <div>
-                                            <div className="text-sm text-gray-500">Precio final</div>
-                                            <div className="text-2xl font-bold">{selectedOffer.price.current}</div>
+                                            <h3 className="font-semibold mb-2">¿Qué incluye tu experiencia?</h3>
+                                            <ul className="space-y-2">
+                                                {selectedOffer.included.map((item, index) => (
+                                                    <li key={index} className="flex items-center gap-2">
+                                                        <span className="text-green-500">✓</span>
+                                                        {item}
+                                                    </li>
+                                                ))}
+                                            </ul>
                                         </div>
-                                        <div className="flex gap-2">
-                                            <Button variant="outline">Financiar</Button>
-                                            <Button>Reservar</Button>
+
+                                        <div>
+                                            <h3 className="font-semibold mb-2">Descripción</h3>
+                                            <p className="text-gray-600">{selectedOffer.fullDescription}</p>
+                                        </div>
+
+                                        {/* Preguntas frecuentes */}
+                                        <div>
+                                            <h3 className="font-semibold mb-2">Preguntas frecuentes</h3>
+                                            <Accordion type="single" collapsible className="w-full">
+                                                {randomQuestions.map((q, index) => (
+                                                    <AccordionItem key={index} value={`item-${index}`}>
+                                                        <AccordionTrigger>{q.question}</AccordionTrigger>
+                                                        <AccordionContent>{q.answer}</AccordionContent>
+                                                    </AccordionItem>
+                                                ))}
+                                            </Accordion>
+                                        </div>
+                                    </div>
+
+                                    {/* Columna derecha: Precio y financiación (visible solo en desktop) */}
+                                    <div className="hidden md:block space-y-4">
+                                        <Card>
+                                            <CardContent className="p-6">
+                                                <div className="space-y-4">
+                                                    <div>
+                                                        <div className="text-sm text-gray-500">Precio final</div>
+                                                        <div className="text-3xl font-bold">{selectedOffer.price.current}</div>
+                                                    </div>
+                                                    <Button className="w-full">Reservar</Button>
+                                                </div>
+                                            </CardContent>
+                                        </Card>
+
+                                        <Card>
+                                            <CardContent className="p-6">
+                                                <div className="space-y-4">
+                                                    <div className="flex items-start gap-3">
+                                                        <div className="p-2 bg-blue-100 rounded-lg">
+                                                            <div className="w-8 h-8 text-blue-500">💎</div>
+                                                        </div>
+                                                        <div>
+                                                            <h4 className="font-semibold">Financiamos tu viaje</h4>
+                                                            <p className="text-sm text-gray-600">
+                                                                Tenemos una financiación flexible, tus sueños de viajar se hacen realidad. ¡Empieza tu
+                                                                aventura ahora!
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <Button variant="link" className="w-full">
+                                                        Ver más
+                                                    </Button>
+                                                </div>
+                                            </CardContent>
+                                        </Card>
+                                    </div>
+
+                                    {/* Footer fijo en móvil/tablet */}
+                                    <div className="fixed bottom-0 left-0 right-0 md:hidden bg-white border-t p-4">
+                                        <div className="flex items-center justify-between gap-4">
+                                            <div>
+                                                <div className="text-sm text-gray-500">Precio final</div>
+                                                <div className="text-2xl font-bold">{selectedOffer.price.current}</div>
+                                            </div>
+                                            <div className="flex gap-2">
+                                                <Button variant="outline">Financiar</Button>
+                                                <Button>Reservar</Button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
